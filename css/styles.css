@@ -1,0 +1,211 @@
+:root {
+    --dark-bg: #1e1e1e;
+    --light-text: #ffffff;
+    --accent-color: #3ae1ff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    margin: 0;
+    padding: 0;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+/************************************/
+
+header {
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--accent-color);
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    height: calc(100vh - 80px);
+    position : relative;
+    z-index: 1;
+}
+
+/************************************/
+
+.intro-text {
+    max-width: 50%;
+}
+
+.intro-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+/************************************/
+
+.download-cv {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.download-cv:hover {
+    background-color: #00cccc;
+}
+
+/************************************/
+
+.profile-image {
+    width: 35%;
+    position: relative;
+    transition: transform 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: -20px;
+    bottom: -20px;
+    background-color: var(--accent-color);
+    border-radius: 100%;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-20px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+
+
+/************************************/
+
+.typed-text {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--light-text);
+    margin-left: 0.1rem;
+    animation: blink 0.7s infinite;
+}
+
+.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0%  { background-color: var(--light-text); }
+    49% { background-color: var(--light-text); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: var(--light-text); }
+}
+
+/************************************/
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-bg);
+    z-index: -1;
+}
+
+
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: var(--accent-color);
+}
+
