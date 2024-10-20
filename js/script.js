@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll function
     function smoothScroll(target, duration) {
@@ -100,21 +101,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
-
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Here you would typically send the form data to a server
-        // For this example, we'll just log it to the console
         const formData = new FormData(form);
         for (let [key, value] of formData.entries()) {
             console.log(key + ': ' + value);
         }
 
-        // Show a success message
         alert('Thank you for your message! I\'ll get back to you soon.');
 
-        // Clear the form
         form.reset();
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById("demo").innerHTML = "My First JavaScript";
+})
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const addProjectBtn = document.getElementById('add-project-btn');
+    const projectContainer = document.getElementById('project-container');
+    let projectCount = 4;
+
+    addProjectBtn.addEventListener('click', function() {
+        projectCount++;
+        const newProject = document.createElement('div');
+        newProject.className = 'project-card';
+        newProject.innerHTML = `
+            <img src="./images/projects/project1.png" alt="Project 1" class="project-image">
+                    <div class="project-info">
+                        <h3>Project ${projectCount} Title</h3>
+                        <p>Brief description of Project 1. Explain what it does and the technologies used.</p>
+                        <div class="project-links">
+                            <a href="https://chokdee-sigazen.github.io/Algorithm.io/" class="btn">View Project</a>
+                            <a href="https://github.com/Chokdee-Sigazen/Algorithm.io" class="btn">GitHub</a>
+                        </div>
+                    </div>
+        `;
+        projectContainer.appendChild(newProject);
+        console.log(`Project #${projectCount} has been added.`);
     });
 });
